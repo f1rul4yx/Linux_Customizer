@@ -22,20 +22,20 @@ Tiene como proposito el configurar las herramientas anteriormente nombradas para
 
 # Atajos
 
-windows + enter [ABRE UNA TERMINAL]
-windows + shift + r [ABRE ROFI]
-windows + w [CIERRA EL NODO ACTIVO]
-windows + m [ALTERNA ENTRE EL MODO PANTALLA COMPLETA Y NORMAL DEL NODO ACTIVO]
-windows + shift + (flechas) [DESPLAZA EL NODO ACTIVO A LA DIRECCIÓN INDICADA]
-windows + tab [ENFOCA EL ÚLTIMO ESCRITORIO ACTIVO]
-windows + shift + (1-9, 0) [ENVIA AL NODO ACTIVO AL ESCRITORIO SELECCIONADO]
-windows + (1-9, 0) [ENFOCAR AL ESCRITORIO SELECCIONADO]
-windows + alt + (flechas) [EXPANDIR UNA VENTANA MOVIENDO UNO DE SUS LADOS HACIA AFUERA]
-windows + alt + shift + (flechas) [CONTRAER UNA VENTANA MOVIENDO UNO DE SUS LADOS HACIA ADENTRO]
-windows + (flechas) [CAMBIAR DE NODO ACTIVO]
-windows + shift + f [ABRIR FIREFOX]
-windows + shift + x [BLOQUEAR EQUIPO]
-windows + shift + s [REALIZAR CAPTURA DE PANTALLA]
+1. windows + enter [ABRE UNA TERMINAL]
+2. windows + shift + r [ABRE ROFI]
+3. windows + w [CIERRA EL NODO ACTIVO]
+4. windows + m [ALTERNA ENTRE EL MODO PANTALLA COMPLETA Y NORMAL DEL NODO ACTIVO]
+5. windows + shift + (flechas) [DESPLAZA EL NODO ACTIVO A LA DIRECCIÓN INDICADA]
+6. windows + tab [ENFOCA EL ÚLTIMO ESCRITORIO ACTIVO]
+7. windows + shift + (1-9, 0) [ENVIA AL NODO ACTIVO AL ESCRITORIO SELECCIONADO]
+8. windows + (1-9, 0) [ENFOCAR AL ESCRITORIO SELECCIONADO]
+9. windows + alt + (flechas) [EXPANDIR UNA VENTANA MOVIENDO UNO DE SUS LADOS HACIA AFUERA]
+10. windows + alt + shift + (flechas) [CONTRAER UNA VENTANA MOVIENDO UNO DE SUS LADOS HACIA ADENTRO]
+11. windows + (flechas) [CAMBIAR DE NODO ACTIVO]
+12. windows + shift + f [ABRIR FIREFOX]
+13. windows + shift + x [BLOQUEAR EQUIPO]
+14. windows + shift + s [REALIZAR CAPTURA DE PANTALLA]
 
 
 # Instalación
