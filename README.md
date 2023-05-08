@@ -1,21 +1,22 @@
 # Linux Customization
 
 Este es un proyecto que su principal función es la de personalizar linux de una manera sencilla usando varias herramientas como:
-Zsh
-Oh-my-zsh
-Kitty
-Bspwm
-Sxhkd
-Power level 10k
-Polybar
-Picom
-Rofi
-Feh
-Bat
-Lsd
-Neovim
-I3lock-fancy
-Scrot
+
+1. Zsh
+2. Oh-my-zsh
+3. Kitty
+4. Bspwm
+5. Sxhkd
+6. Power level 10k
+7. Polybar
+8. Picom
+9. Rofi
+10. Feh
+11. Bat
+12. Lsd
+13. Neovim
+14. I3lock-fancy
+15. Scrot
 
 Tiene como proposito el configurar las herramientas anteriormente nombradas para que puedan ser usadas rapidamente.
 
