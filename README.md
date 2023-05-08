@@ -49,4 +49,5 @@ Tiene como proposito el configurar las herramientas anteriormente nombradas para
 
 
 # Notas
+
 1. Para poder cambiar el fondo de pantalla se debe mover la imagen que se desee usar como fondo de pantalla al directorio ~/.config/wallpapers/ con el nombre wallpaper.png y después de eso reiniciar la sesión
