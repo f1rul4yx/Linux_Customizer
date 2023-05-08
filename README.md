@@ -1,4 +1,4 @@
-Personalización de linux
+# Linux Customization
 
 Este es un proyecto que su principal función es la de personalizar linux de una manera sencilla usando varias herramientas como:
 Zsh
@@ -20,7 +20,7 @@ Scrot
 Tiene como proposito el configurar las herramientas anteriormente nombradas para que puedan ser usadas rapidamente.
 
 
-Atajos
+# Atajos
 
 windows + enter				[ABRE UNA TERMINAL]
 windows + shift + r			[ABRE ROFI]
@@ -38,7 +38,7 @@ windows + shift + x 			[BLOQUEAR EQUIPO]
 windows + shift + s 			[REALIZAR CAPTURA DE PANTALLA]
 
 
-Instalación
+# Instalación
 
 1. Agragar al archivo /etc/sudoers tu nombre de usuario
 2. Con el comando git clone copiar el repositorio https://www.github/f1rul4yx/linux_customization
