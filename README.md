@@ -1,4 +1,5 @@
 # Linux Customization
+
 Este es un proyecto que su principal función es la de personalizar linux de una manera sencilla usando varias herramientas como:
 
 1. Zsh
