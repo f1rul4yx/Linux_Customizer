@@ -46,3 +46,7 @@ Tiene como proposito el configurar las herramientas anteriormente nombradas para
 3. Con el comando chmod dar permisos de ejecución a los archivos .sh
 4. Con el usuario normal ejecutar el archivo launch.sh y seguir los pasos de la instalación
 5. Con el usuario root (sudo su) ejecutar el archivo launch_su.sh y seguir los pasos de la instalación
+
+
+# Notas
+1. Para poder cambiar el fondo de pantalla se debe mover la imagen que se desee usar como fondo de pantalla al directorio ~/.config/wallpapers/ con el nombre wallpaper.png y después de eso reiniciar la sesión
