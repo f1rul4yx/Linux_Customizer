@@ -41,7 +41,7 @@ windows + shift + s 			[REALIZAR CAPTURA DE PANTALLA]
 # Instalación
 
 1. Agragar al archivo /etc/sudoers tu nombre de usuario
-2. Con el comando git clone copiar el repositorio https://www.github/f1rul4yx/linux_customization
+2. Con el comando git clone copiar el repositorio https://github.com/f1rul4yx/linux_customization.git
 3. Con el comando chmod dar permisos de ejecución a los archivos .sh
 4. Con el usuario normal ejecutar el archivo launch.sh y seguir los pasos de la instalación
 5. Con el usuario root (sudo su) ejecutar el archivo launch_su.sh y seguir los pasos de la instalación
