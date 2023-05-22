@@ -1,4 +1,4 @@
-# Linux Customization
+# Linux_Customizer
 
 Este es un proyecto que su principal función es la de personalizar linux de una manera sencilla usando varias herramientas como:
 
