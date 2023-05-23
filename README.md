@@ -1,7 +1,5 @@
 # Linux_Customizer
-
 Este es un proyecto que su principal función es la de personalizar linux de una manera sencilla usando varias herramientas como:
-
 1. Zsh
 2. Oh-my-zsh
 3. Kitty
@@ -17,12 +15,8 @@ Este es un proyecto que su principal función es la de personalizar linux de una
 13. Neovim
 14. I3lock-fancy
 15. Scrot
-
 Tiene como proposito el configurar las herramientas anteriormente nombradas para que puedan ser usadas rapidamente.
-
-
 # Atajos
-
 1. windows + enter [ABRE UNA TERMINAL]
 2. windows + shift + r [ABRE ROFI]
 3. windows + w [CIERRA EL NODO ACTIVO]
@@ -37,17 +31,11 @@ Tiene como proposito el configurar las herramientas anteriormente nombradas para
 12. windows + shift + f [ABRIR FIREFOX]
 13. windows + shift + x [BLOQUEAR EQUIPO]
 14. windows + shift + s [REALIZAR CAPTURA DE PANTALLA]
-
-
 # Instalación
-
 1. Agregar al archivo /etc/sudoers tu nombre de usuario
 2. Con el comando git clone copiar el repositorio https://github.com/f1rul4yx/linux_customization.git
 3. Con el comando chmod dar permisos de ejecución a los archivos .sh
 4. Con el usuario normal ejecutar el archivo launch.sh y seguir los pasos de la instalación
 5. Con el usuario root (sudo su) ejecutar el archivo launch_su.sh y seguir los pasos de la instalación
-
-
 # Notas
-
 1. Para poder cambiar el fondo de pantalla se debe mover la imagen que se desee usar como fondo de pantalla al directorio ~/.config/wallpapers/ con el nombre wallpaper.png y después de eso reiniciar la sesión
