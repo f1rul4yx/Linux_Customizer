@@ -108,6 +108,6 @@ source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Aliases
 alias ls="lsd"
 alias cat="batcat"
-alias update="zsh ~/.config/scripts/update/update.sh"
+alias update="sudo zsh ~/.config/scripts/update/update.sh"
 alias target="zsh ~/.config/scripts/target/target.sh"
 alias untarget="zsh ~/.config/scripts/target/untarget.sh"
