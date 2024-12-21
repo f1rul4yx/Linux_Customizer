@@ -1,12 +1,12 @@
 #!/bin/zsh
 
 clear
-apt list --upgradable
+sudo apt update &> /dev/null
+echo -e "Los siguientes paquetes necesitan actualización:\n$(apt list --upgradable 2> /dev/null | awk 'NR > 1 {print $1, $6, "--->", $1, $2}' | sed 's/]//g')"
 echo -en "\n¿Quieres actualizar los paquetes? (s/n): "
 read respuesta_actualizar
 case "$respuesta_actualizar" in
         [Ss]*)
-                sudo apt update -y
                 sudo apt upgrade -y
                 ;;
         *)
