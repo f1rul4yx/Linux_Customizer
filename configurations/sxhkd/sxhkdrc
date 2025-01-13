@@ -132,9 +132,9 @@ super + shift + f
 super + shift + x
     /usr/bin/i3lock-fancy
 
-# scrot
+# flameshot
 super + shift + s
-    /usr/bin/scrot -s '/tmp/screenshot_%Y-%m-%d_%H-%M-%S.png' -e 'mv $f /tmp/screenshot.png' && xclip -selection clipboard -t image/png -i /tmp/screenshot.png
+    /usr/bin/flameshot gui
 
 # pactl +
 super + shift + p

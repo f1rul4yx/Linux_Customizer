@@ -34,6 +34,8 @@ bash launch.sh
 - Añadir nueva ventana a la terminal [ CTRL + SHIFT + ENTER ]
 - Cambiar distribución de ventanas de la terminal [ CTRL + SHIFT + L ]
 - Redimensionar terminal [ CTRL + SHIFT + R ]
+- Cambiar el foco de la ventana [ CTRL + SHIFT + F7 ]
+- Cambiar posición de la ventana [ CTRL + SHIFT + F8 ]
 
 ## Dependencias
 
@@ -49,8 +51,7 @@ bash launch.sh
 - dmenu
 - feh
 - i3lock-fancy
-- scrot
-- xclip
+- flameshot
 - git
 - curl
 - pulseaudio
@@ -74,6 +75,8 @@ bash launch.sh
 +$HOME/.config/polybar/launch.sh
 +picom &
 +feh --bg-scale $HOME/.config/wallpapers/wallpaper.png
++### Dos monitores
++# xrandr --output DP-1 --primary --mode 1920x1080 --rotate normal --rate 165 --output DP-2 --mode 1920x1080 --rotate normal --rate 144 --left-of DP-1
 ```
 
 ### ~/.config/kitty/kitty.conf
@@ -163,9 +166,9 @@ bash launch.sh
 +# i3lock
 +super + shift + x
 +    /usr/bin/i3lock-fancy
-+# scrot
++# flameshot
 +super + shift + s
-+    /usr/bin/scrot -s '/tmp/screenshot_%Y-%m-%d_%H-%M-%S.png' -e 'mv $f /tmp/screenshot.png' && xclip -selection clipboard -t image/png -i /tmp/screenshot.png
++    /usr/bin/flameshot gui
 +# pactl +
 +super + shift + p
 +    /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ +1%
