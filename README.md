@@ -67,16 +67,11 @@ bash launch.sh
 -bspc monitor -d I II III IV V VI VII VIII IX X
 +bspc monitor -d          
 ```
-```
--bspc config border_width         2
-+bspc config border_width         0
-```
+
 ```
 +$HOME/.config/polybar/launch.sh
 +picom &
 +feh --bg-scale $HOME/.config/wallpapers/wallpaper.png
-+### Dos monitores
-+# xrandr --output DP-1 --primary --mode 1920x1080 --rotate normal --rate 165 --output DP-2 --mode 1920x1080 --rotate normal --rate 144 --left-of DP-1
 ```
 
 ### ~/.config/kitty/kitty.conf
@@ -85,22 +80,27 @@ bash launch.sh
 -cursor_shape block
 +cursor_shape beam
 ```
+
 ```
 -window_padding_width 0
 +window_padding_width 20
 ```
+
 ```
 -tab_bar_style fade
 +tab_bar_style powerline
 ```
+
 ```
 -background #000000
 +background #222222
 ```
+
 ```
 -background_opacity 1.0
 +background_opacity 0.85
 ```
+
 ```
 +#: Clipboard adicional
 +map f1 copy_to_buffer a
@@ -112,20 +112,13 @@ bash launch.sh
 ### ~/.config/picom/picom.conf
 
 ```
--# shadow = false
 -shadow = true;
 +shadow = false;
-+# shadow = true
 ```
+
 ```
--corner-radius = 0
-+corner-radius = 15
-```
-```
--# vsync = false
 -vsync = true;
 +vsync = false;
-+# vsync = true
 ```
 
 ### ~/.config/sxhkd/sxhkdrc
@@ -134,28 +127,34 @@ bash launch.sh
 -	urxvt
 +	/usr/bin/kitty
 ```
+
 ```
 -super + @space
 -	dmenu_run
 +super + shift + m
 +	/usr/bin/dmenu_run -b -i -nb "#222222" -nf "#ffffff" -sb "#9b59b6" -sf "#ffffff"
 ```
+
 ```
 -super + {_,shift + }{h,j,k,l}
 +super + {_,shift + }{Left,Down,Up,Right}
 ```
+
 ```
 -super + ctrl + {h,j,k,l}
 +super + ctrl + {Left,Down,Up,Right}
 ```
+
 ```
 -super + alt + {h,j,k,l}
 +super + alt + {Left,Down,Up,Right}
 ```
+
 ```
 -super + alt + shift + {h,j,k,l}
 +super + alt + shift + {Left,Down,Up,Right}
 ```
+
 ```
 +#
 +# programs
@@ -179,4 +178,45 @@ bash launch.sh
 
 ## Notas
 
+### Fondo de Pantalla
+
 - Para cambiar el fondo de pantalla se debe añadir la imagen con formato png y nombre wallpaper a la ruta ~/.config/wallpapers/
+
+### Configuración 2 Monitores
+
+- Para añadir dos monitores se debe modificar la configuración del bspwmrc y de la polybar.
+
+#### ~/.config/bspwm/bspwmrc
+
+```
+bspc monitor -d          
+# Si no aparece la polybar en la pantalla correcta indícala manualmente: bspc monitor DP-1 -d          
+# Para asignar la pantalla ejecuta: xrandr | grep -w "connected" | awk '{print $1}'
+# Este comando muestra las pantallas físicas que tienes conectadas.
+```
+
+```
+### Dos monitores
+# xrandr --output DP-1 --primary --mode 1920x1080 --rotate normal --rate 165 --output DP-2 --mode 1920x1080 --rotate normal --rate 144 --left-of DP-1
+```
+
+#### ~/.config/polybar/config.ini¡
+
+```
+[bar/main]
+;monitor = DP-2
+; Para asignar la pantalla ejecuta: xrandr | grep -w "connected" | awk '{print $1}'
+; Este comando muestra las pantallas físicas que tienes conectadas.
+```
+
+### Configuración Modulo network
+
+- Para añadir al modulo network la interfaz correcta se debe colocar el nombre de la misma en el fichero ~/.config/polybar/modules.ini
+
+#### ~/.config/polybar/modules.ini
+
+```
+[module/wired]
+type = internal/network
+interface = eno1
+```

@@ -3,8 +3,11 @@
 pgrep -x sxhkd > /dev/null || sxhkd &
 
 bspc monitor -d          
+# Si no aparece la polybar en la pantalla correcta indícala manualmente: bspc monitor DP-1 -d          
+# Para asignar la pantalla ejecuta: xrandr | grep -w "connected" | awk '{print $1}'
+# Este comando muestra las pantallas físicas que tienes conectadas.
 
-bspc config border_width         0
+bspc config border_width         2
 bspc config window_gap          12
 
 bspc config split_ratio          0.52
