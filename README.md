@@ -200,7 +200,7 @@ bspc monitor -d          
 # xrandr --output DP-1 --primary --mode 1920x1080 --rotate normal --rate 165 --output DP-2 --mode 1920x1080 --rotate normal --rate 144 --left-of DP-1
 ```
 
-#### ~/.config/polybar/config.ini¡
+#### ~/.config/polybar/config.ini
 
 ```
 [bar/main]
