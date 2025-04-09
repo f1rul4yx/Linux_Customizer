@@ -36,6 +36,12 @@ bash launch.sh
 - Redimensionar terminal [ CTRL + SHIFT + R ]
 - Cambiar el foco de la ventana [ CTRL + SHIFT + F7 ]
 - Cambiar posición de la ventana [ CTRL + SHIFT + F8 ]
+- Cambiar el nodo a flotante [ WIN + S ]
+- Cambiar el nodo a pantalla completa [ WIN + F ]
+- Cambiar el nodo al estado normal [ WIN + T ]
+- Hacer scroll por la terminal [ CTRL + SHIFT + (flechas) ]
+- Mover al principio y al final de la terminal [ CTRL + SHIFT + (INICIO / FIN) ]
+- Mover página por página de la terminal [ CTRL + SHIFT + (RE PÁG / AV PÁG) ]
 
 ## Dependencias
 
