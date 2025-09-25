@@ -127,6 +127,11 @@ bash launch.sh
 +vsync = false;
 ```
 
+```
+-inactive-opacity = 0.8;
++inactive-opacity = 1;
+```
+
 ### ~/.config/sxhkd/sxhkdrc
 
 ```
