@@ -3,7 +3,7 @@
 # Instalador de Linux_Customizer
 # Autor: Diego Vargas
 # Fecha: 2026-03-18
-# Versión: 2.1.0
+# Versión: 2.1.1
 # =========================================
 
 
@@ -73,7 +73,7 @@ install_root() {
   sudo -H sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   echo -e "${AZUL}[i] Instalando Powerlevel10k para root...${RESET}"
   sudo -H git clone --depth=1 https://github.com/romkatv/powerlevel10k.git /root/.oh-my-zsh/custom/themes/powerlevel10k
-  sudo cp "$SCRIPT_DIR/configurations/zshrc_sudo" /root/.zshrc
+  sudo cp "$SCRIPT_DIR/configurations/zshrc" /root/.zshrc
   echo -e "${VERDE}[+] Configuración del usuario root completada.${RESET}"
 }
 
