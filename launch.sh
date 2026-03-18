@@ -3,7 +3,7 @@
 # Instalador de Linux_Customizer
 # Autor: Diego Vargas
 # Fecha: 2026-03-18
-# Versión: 2.0
+# Versión: 2.1.0
 # =========================================
 
 
