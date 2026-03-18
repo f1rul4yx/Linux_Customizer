@@ -184,8 +184,8 @@ bash launch.sh
 - flameshot
 - git
 - curl
-- pulseaudio
-- p7zip
+- pulseaudio-utils
+- p7zip-full
 - Oh My Zsh
 - Powerlevel10k
 
