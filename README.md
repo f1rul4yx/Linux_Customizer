@@ -134,6 +134,8 @@ Al finalizar, el script preguntará si se desea aplicar la configuración de zsh
 |-------|--------|
 | `CTRL + SHIFT + T` | Nueva pestaña |
 | `CTRL + SHIFT + ← →` | Cambiar de pestaña |
+| `CTRL + SHIFT + .` | Mover pestaña hacia adelante |
+| `CTRL + SHIFT + ,` | Mover pestaña hacia atrás |
 | `CTRL + SHIFT + ALT + T` | Renombrar pestaña |
 | `CTRL + SHIFT + Q` | Cerrar pestaña |
 
