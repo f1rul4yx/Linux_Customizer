@@ -1,16 +1,28 @@
 # Linux_Customizer
 
-Este es un proyecto que su función es personalizar el entorno de GNU/Linux de una manera sencilla para usarlo como una herramienta de trabajo eficaz.
+Configuración de un entorno de escritorio minimalista en Debian basado en **bspwm**, **kitty**, **polybar**, **picom** y **zsh** con Oh My Zsh + Powerlevel10k. Orientado al teclado y pensado para usarlo como herramienta de trabajo eficaz.
+
+## Índice
+
+- [Instalación](#instalación)
+- [Atajos](#atajos)
+- [Notas de configuración](#notas-de-configuración)
+- [Configuración manual](#configuración-manual)
+- [Dependencias](#dependencias)
+
+---
 
 ## Instalación
 
-```
+```bash
 git clone https://github.com/f1rul4yx/Linux_Customizer.git
 cd Linux_Customizer
 bash launch.sh
 ```
 
-Al finalizar la instalación, el script preguntará si se desea aplicar la configuración de zsh también al usuario root.
+Al finalizar, el script preguntará si se desea aplicar la configuración de zsh también al usuario root.
+
+---
 
 ## Atajos
 
@@ -169,38 +181,78 @@ Al finalizar la instalación, el script preguntará si se desea aplicar la confi
 | `F3` | Copiar al buffer B |
 | `F4` | Pegar del buffer B |
 
-## Dependencias
+---
 
-- bspwm
-- sxhkd
-- polybar
-- picom
-- kitty
-- zsh
-- zsh-syntax-highlighting
-- bat
-- lsd
-- dmenu
-- feh
-- i3lock-fancy
-- flameshot
-- git
-- curl
-- pulseaudio-utils
-- p7zip-full
-- Oh My Zsh
-- Powerlevel10k
+## Notas de configuración
 
-## Configuraciones
+### Fondo de pantalla
+
+Reemplaza el archivo con tu imagen:
+
+```
+~/.config/wallpapers/wallpaper.png
+```
+
+### Dos monitores
+
+Detecta los nombres de tus pantallas:
+
+```bash
+xrandr | grep -w "connected" | awk '{print $1}'
+```
+
+Configura la resolución y posición (ajusta los nombres y valores a tu caso):
+
+```bash
+xrandr --output DP-1 --primary --mode 1920x1080 --rate 165 --output DP-2 --mode 1920x1080 --rate 144 --left-of DP-1
+```
+
+Edita `~/.config/bspwm/bspwmrc` y asigna escritorios a cada monitor:
+
+```bash
+bspc monitor DP-1 -d 1 2 3 4 5
+bspc monitor DP-2 -d 6 7 8 9 10
+# Si la polybar no aparece en la pantalla correcta, indícala manualmente:
+# bspc monitor DP-1 -d 1 2 3 4 5
+```
+
+Edita `~/.config/polybar/config.ini` y especifica el monitor en cada barra:
+
+```ini
+[bar/main]
+monitor = DP-1
+```
+
+### Interfaz de red (polybar)
+
+Obtén el nombre de tu interfaz:
+
+```bash
+ip link show | grep -E "^[0-9]+" | awk '{print $2}' | tr -d ':'
+```
+
+Edita `~/.config/polybar/modules.ini`:
+
+```ini
+[module/wired]
+type = internal/network
+interface = eno1   ; sustituye por el nombre de tu interfaz
+```
+
+---
+
+## Configuración manual
+
+Esta sección es para quienes quieran aplicar los cambios a mano sin usar el script de instalación. Muestra las diferencias respecto a los valores por defecto de cada herramienta.
 
 ### ~/.config/bspwm/bspwmrc
 
-```
+```diff
 -bspc monitor -d I II III IV V VI VII VIII IX X
-+bspc monitor -d          
++bspc monitor -d
 ```
 
-```
+```diff
 +$HOME/.config/polybar/launch.sh
 +picom &
 +feh --bg-scale $HOME/.config/wallpapers/wallpaper.png
@@ -208,32 +260,22 @@ Al finalizar la instalación, el script preguntará si se desea aplicar la confi
 
 ### ~/.config/kitty/kitty.conf
 
-```
+```diff
 -cursor_shape block
 +cursor_shape beam
-```
 
-```
 -window_padding_width 0
 +window_padding_width 20
-```
 
-```
 -tab_bar_style fade
 +tab_bar_style powerline
-```
 
-```
 -background #000000
 +background #222222
-```
 
-```
 -background_opacity 1.0
 +background_opacity 0.85
-```
 
-```
 +#: Clipboard adicional
 +map f1 copy_to_buffer a
 +map f2 paste_from_buffer a
@@ -243,117 +285,84 @@ Al finalizar la instalación, el script preguntará si se desea aplicar la confi
 
 ### ~/.config/picom/picom.conf
 
-```
+```diff
 -shadow = true;
 +shadow = false;
-```
 
-```
 -vsync = true;
 +vsync = false;
-```
 
-```
 -inactive-opacity = 0.8;
 +inactive-opacity = 1;
 ```
 
 ### ~/.config/sxhkd/sxhkdrc
 
-```
--	urxvt
-+	/usr/bin/kitty
-```
+```diff
+-    urxvt
++    /usr/bin/kitty
 
-```
 -super + @space
--	dmenu_run
+-    dmenu_run
 +super + shift + m
-+	/usr/bin/dmenu_run -b -i -nb "#222222" -nf "#ffffff" -sb "#9b59b6" -sf "#ffffff"
-```
++    /usr/bin/dmenu_run -b -i -nb "#222222" -nf "#ffffff" -sb "#9b59b6" -sf "#ffffff"
 
-```
 -super + {_,shift + }{h,j,k,l}
 +super + {_,shift + }{Left,Down,Up,Right}
-```
 
-```
 -super + ctrl + {h,j,k,l}
 +super + ctrl + {Left,Down,Up,Right}
-```
 
-```
 -super + alt + {h,j,k,l}
 +super + alt + {Left,Down,Up,Right}
-```
 
-```
 -super + alt + shift + {h,j,k,l}
 +super + alt + shift + {Left,Down,Up,Right}
-```
 
-```
-+#
-+# programs
-+#
-+# firefox
 +super + shift + f
 +    /usr/bin/firefox-esr
-+# i3lock
 +super + shift + x
 +    /usr/bin/i3lock-fancy
-+# flameshot
 +super + shift + s
 +    /usr/bin/flameshot gui
-+# pactl +
 +super + shift + p
 +    /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ +1%
-+# pactl -
 +super + shift + o
 +    /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ -1%
 ```
 
-## Notas
+---
 
-### Fondo de Pantalla
+<details>
+<summary><strong>Dependencias</strong></summary>
 
-- Para cambiar el fondo de pantalla se debe añadir la imagen con formato png y nombre wallpaper a la ruta ~/.config/wallpapers/
+Instaladas automáticamente por `launch.sh`:
 
-### Configuración 2 Monitores
+| Paquete | Uso |
+|---------|-----|
+| `bspwm` | Window manager |
+| `sxhkd` | Gestor de atajos de teclado |
+| `polybar` | Barra de estado |
+| `picom` | Compositor |
+| `kitty` | Terminal |
+| `zsh` | Shell |
+| `zsh-syntax-highlighting` | Resaltado de sintaxis en zsh |
+| `bat` | Visor de archivos (binario: `batcat`) |
+| `lsd` | Reemplazo de `ls` |
+| `dmenu` | Lanzador de aplicaciones |
+| `feh` | Gestor de fondo de pantalla |
+| `i3lock-fancy` | Bloqueo de pantalla |
+| `flameshot` | Capturas de pantalla |
+| `git` | Control de versiones |
+| `curl` | Descarga de recursos |
+| `pulseaudio-utils` | Control de volumen (`pactl`) |
+| `p7zip-full` | Extracción de fuentes (`7z`) |
 
-- Para añadir dos monitores se debe modificar la configuración del bspwmrc y de la polybar.
+Instaladas mediante script:
 
-#### ~/.config/bspwm/bspwmrc
+| Herramienta | Uso |
+|-------------|-----|
+| Oh My Zsh | Framework para zsh |
+| Powerlevel10k | Tema para zsh |
 
-```
-bspc monitor -d          
-# Si no aparece la polybar en la pantalla correcta indícala manualmente: bspc monitor DP-1 -d          
-# Para asignar la pantalla ejecuta: xrandr | grep -w "connected" | awk '{print $1}'
-# Este comando muestra las pantallas físicas que tienes conectadas.
-```
-
-```
-### Dos monitores
-# xrandr --output DP-1 --primary --mode 1920x1080 --rotate normal --rate 165 --output DP-2 --mode 1920x1080 --rotate normal --rate 144 --left-of DP-1
-```
-
-#### ~/.config/polybar/config.ini
-
-```
-[bar/main]
-;monitor = DP-2
-; Para asignar la pantalla ejecuta: xrandr | grep -w "connected" | awk '{print $1}'
-; Este comando muestra las pantallas físicas que tienes conectadas.
-```
-
-### Configuración Modulo network
-
-- Para añadir al modulo network la interfaz correcta se debe colocar el nombre de la misma en el fichero ~/.config/polybar/modules.ini
-
-#### ~/.config/polybar/modules.ini
-
-```
-[module/wired]
-type = internal/network
-interface = eno1
-```
+</details>
