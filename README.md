@@ -10,6 +10,8 @@ cd Linux_Customizer
 bash launch.sh
 ```
 
+Al finalizar la instalación, el script preguntará si se desea aplicar la configuración de zsh también al usuario root.
+
 ## Atajos
 
 ### Sistema
