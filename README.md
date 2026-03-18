@@ -12,36 +12,160 @@ bash launch.sh
 
 ## Atajos
 
-- Abre una terminal [ WIN + ENTER ]
-- Abre dmenu [ WIN + SHIFT + M ]
-- Cierra el nodo activo [ WIN + W ]
-- Alterna entre el modo pantalla completa y normal del nodo activo [ WIN + M ]
-- Desplaza el nodo activo a la dirección indicada [ WIN + SHIFT + (flechas) ]
-- Enfoca el último escritorio activo [ WIN + TAB ]
-- Envía el nodo activo al escritorio seleccionado [ WIN + SHIFT + (0-9) ]
-- Enfocar al escritorio seleccionado [ WIN + (0-9) ]
-- Expandir una ventana moviendo uno de sus lados hacia afuera [ WIN + ALT + (flechas) ]
-- Contraer una ventana moviendo uno de sus lados hacia adentro [ WIN + SHIFT + ALT + (flechas) ]
-- Cambiar de nodo activo [ WIN + (flechas) ]
-- Abrir firefox [ WIN + SHIFT + F ]
-- Bloquear equipo [ WIN + SHIFT + X ]
-- Realizar captura de pantalla [ WIN + SHIFT + S ]
-- Bajar volumen [ WIN + SHIFT + O ]
-- Subir volumen [ WIN + SHIFT + P ]
-- Añadir nueva pestaña a la terminal [ CTRL + SHIFT + T ]
-- Cambiar de pestaña de la terminal [ CTRL + SHIFT + (flechas) ]
-- Cambiar nombre de la pestaña [ CTRL + SHIFT + ALT + T ]
-- Añadir nueva ventana a la terminal [ CTRL + SHIFT + ENTER ]
-- Cambiar distribución de ventanas de la terminal [ CTRL + SHIFT + L ]
-- Redimensionar terminal [ CTRL + SHIFT + R ]
-- Cambiar el foco de la ventana [ CTRL + SHIFT + F7 ]
-- Cambiar posición de la ventana [ CTRL + SHIFT + F8 ]
-- Cambiar el nodo a flotante [ WIN + S ]
-- Cambiar el nodo a pantalla completa [ WIN + F ]
-- Cambiar el nodo al estado normal [ WIN + T ]
-- Hacer scroll por la terminal [ CTRL + SHIFT + (flechas) ]
-- Mover al principio y al final de la terminal [ CTRL + SHIFT + (INICIO / FIN) ]
-- Mover página por página de la terminal [ CTRL + SHIFT + (RE PÁG / AV PÁG) ]
+### Sistema
+
+| Atajo | Acción |
+|-------|--------|
+| `WIN + ALT + Q` | Cerrar bspwm |
+| `WIN + ALT + R` | Reiniciar bspwm |
+| `WIN + ESC` | Recargar configuración de sxhkd |
+
+---
+
+### Aplicaciones
+
+| Atajo | Acción |
+|-------|--------|
+| `WIN + ENTER` | Abrir terminal (kitty) |
+| `WIN + SHIFT + M` | Abrir lanzador de aplicaciones (dmenu) |
+| `WIN + SHIFT + F` | Abrir Firefox |
+| `WIN + SHIFT + X` | Bloquear pantalla |
+| `WIN + SHIFT + S` | Captura de pantalla (flameshot) |
+
+---
+
+### Volumen
+
+| Atajo | Acción |
+|-------|--------|
+| `WIN + SHIFT + P` | Subir volumen |
+| `WIN + SHIFT + O` | Bajar volumen |
+
+---
+
+### Ventanas — Estado
+
+| Atajo | Acción |
+|-------|--------|
+| `WIN + T` | Modo normal (tiled) |
+| `WIN + S` | Modo flotante |
+| `WIN + F` | Modo pantalla completa |
+| `WIN + SHIFT + T` | Modo pseudo-tiled |
+| `WIN + M` | Alternar layout monocle / tiled |
+| `WIN + W` | Cerrar ventana activa |
+| `WIN + SHIFT + W` | Forzar cierre de ventana activa |
+
+#### Flags de nodo
+
+| Atajo | Acción |
+|-------|--------|
+| `WIN + CTRL + M` | Marcar nodo |
+| `WIN + CTRL + X` | Bloquear nodo |
+| `WIN + CTRL + Y` | Fijar nodo (sticky) |
+| `WIN + CTRL + Z` | Nodo privado |
+
+---
+
+### Ventanas — Foco y Movimiento
+
+| Atajo | Acción |
+|-------|--------|
+| `WIN + ↑ ↓ ← →` | Mover foco en la dirección indicada |
+| `WIN + SHIFT + ↑ ↓ ← →` | Desplazar ventana activa en la dirección indicada |
+| `WIN + C` | Enfocar siguiente ventana en el escritorio |
+| `WIN + SHIFT + C` | Enfocar ventana anterior en el escritorio |
+| `WIN + G` | Intercambiar ventana activa con la más grande |
+| `WIN + TAB` | Volver al último escritorio activo |
+| `WIN + O` | Ir al nodo anterior en el historial de foco |
+| `WIN + I` | Ir al nodo siguiente en el historial de foco |
+
+---
+
+### Escritorios (Workspaces)
+
+| Atajo | Acción |
+|-------|--------|
+| `WIN + (1-9, 0)` | Ir al escritorio seleccionado |
+| `WIN + SHIFT + (1-9, 0)` | Enviar ventana activa al escritorio seleccionado |
+| `WIN + AltGr + \`` | Ir al escritorio anterior (tecla `` `^ ``) |
+| `WIN + AltGr + +` | Ir al escritorio siguiente (tecla `+*`) |
+
+---
+
+### Preselección de espacio
+
+| Atajo | Acción |
+|-------|--------|
+| `WIN + CTRL + ↑ ↓ ← →` | Preseleccionar dirección para la nueva ventana |
+| `WIN + CTRL + (1-9)` | Ajustar ratio de la preselección |
+| `WIN + CTRL + SPACE` | Cancelar preselección del nodo activo |
+| `WIN + CTRL + SHIFT + SPACE` | Cancelar todas las preselecciones del escritorio |
+
+---
+
+### Redimensionar ventanas
+
+| Atajo | Acción |
+|-------|--------|
+| `WIN + ALT + ↑ ↓ ← →` | Expandir ventana hacia afuera |
+| `WIN + ALT + SHIFT + ↑ ↓ ← →` | Contraer ventana hacia adentro |
+
+---
+
+### Terminal (Kitty)
+
+#### Pestañas
+
+| Atajo | Acción |
+|-------|--------|
+| `CTRL + SHIFT + T` | Nueva pestaña |
+| `CTRL + SHIFT + ← →` | Cambiar de pestaña |
+| `CTRL + SHIFT + ALT + T` | Renombrar pestaña |
+| `CTRL + SHIFT + Q` | Cerrar pestaña |
+
+#### Ventanas internas
+
+| Atajo | Acción |
+|-------|--------|
+| `CTRL + SHIFT + ENTER` | Nueva ventana interna |
+| `CTRL + SHIFT + W` | Cerrar ventana interna |
+| `CTRL + SHIFT + L` | Cambiar distribución de ventanas |
+| `CTRL + SHIFT + R` | Redimensionar ventana interna |
+| `CTRL + SHIFT + F7` | Cambiar foco de ventana interna |
+| `CTRL + SHIFT + F8` | Cambiar posición de ventana interna |
+| `CTRL + SHIFT + F11` | Pantalla completa |
+
+#### Tamaño de fuente
+
+| Atajo | Acción |
+|-------|--------|
+| `CTRL + SHIFT + =` | Aumentar tamaño de fuente |
+| `CTRL + SHIFT + -` | Reducir tamaño de fuente |
+| `CTRL + SHIFT + RETROCESO` | Resetear tamaño de fuente |
+
+#### Opacidad
+
+| Atajo | Acción |
+|-------|--------|
+| `CTRL + SHIFT + A`, luego `M` | Aumentar opacidad del fondo |
+| `CTRL + SHIFT + A`, luego `L` | Reducir opacidad del fondo |
+
+#### Scroll
+
+| Atajo | Acción |
+|-------|--------|
+| `CTRL + SHIFT + ↑ ↓` | Scroll línea a línea |
+| `CTRL + SHIFT + INICIO / FIN` | Ir al principio / final |
+| `CTRL + SHIFT + RE PÁG / AV PÁG` | Scroll página a página |
+
+#### Portapapeles adicional
+
+| Atajo | Acción |
+|-------|--------|
+| `F1` | Copiar al buffer A |
+| `F2` | Pegar del buffer A |
+| `F3` | Copiar al buffer B |
+| `F4` | Pegar del buffer B |
 
 ## Dependencias
 
